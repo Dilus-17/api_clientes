@@ -25,6 +25,13 @@ def require_api_key(api_key: str = Depends(api_key_header)):
     if api_key != API_KEY:
         raise HTTPException(status_code=401, detail="API Key inválida")
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"mensaje": "API Clientes activa"}
 
 # ======= Sesión DB =======
 def get_db():
