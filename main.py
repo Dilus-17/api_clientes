@@ -31,7 +31,10 @@ app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"mensaje": "API Clientes activa"}
+    return {
+        "mensaje": "API de Clientes funcionando",
+        "docs": "/docs"
+    }
 
 # ======= Sesión DB =======
 def get_db():
